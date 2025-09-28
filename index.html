@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSM Map Exporter</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 2rem;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .feature h3 {
+            margin: 0 0 0.5rem 0;
+            color: #333;
+        }
+        .feature p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+        .stats {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .stat {
+            display: inline-block;
+            margin: 0 1rem;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .demo-note {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 2rem 0;
+            color: #1976d2;
+        }
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        .tech {
+            background: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗺️ OSM Map Exporter</h1>
+        <p class="subtitle">Extract and export OpenStreetMap data with interactive mapping capabilities</p>
+        
+        <div class="demo-note">
+            <strong>🚀 Live Demo:</strong> This is a static page. For the full interactive application, 
+            clone the repository and run <code>./start.sh</code> locally.
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🗺️ Interactive Maps</h3>
+                <p>Search and explore locations worldwide with accurate geocoding</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Data Extraction</h3>
+                <p>Extract roads, buildings, amenities, and POIs from OpenStreetMap</p>
+            </div>
+            <div class="feature">
+                <h3>📄 Export Options</h3>
+                <p>Export your maps to PDF and PowerPoint formats</p>
+            </div>
+            <div class="feature">
+                <h3>🌐 Multi-language</h3>
+                <p>Support for Armenian, English, and Russian languages</p>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">27,089</div>
+                <div class="stat-label">Roads in Yerevan</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">3,710</div>
+                <div class="stat-label">Kilometers</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Working</div>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <a href="https://github.com/lethifold222/osm-map-exporter" class="btn btn-primary">
+                📁 View on GitHub
+            </a>
+            <a href="https://github.com/lethifold222/osm-map-exporter/archive/refs/heads/main.zip" class="btn btn-secondary">
+                💾 Download ZIP
+            </a>
+        </div>
+        
+        <div class="tech-stack">
+            <span class="tech">React</span>
+            <span class="tech">TypeScript</span>
+            <span class="tech">FastAPI</span>
+            <span class="tech">Python</span>
+            <span class="tech">Leaflet</span>
+            <span class="tech">OpenStreetMap</span>
+        </div>
+        
+        <h3>Quick Start</h3>
+        <pre style="background: #f8f9fa; padding: 1rem; border-radius: 8px; text-align: left; overflow-x: auto;">
+git clone https://github.com/lethifold222/osm-map-exporter.git
+cd osm-map-exporter
+./start.sh
+# Open http://localhost:3000
+        </pre>
+        
+        <p style="color: #666; margin-top: 2rem;">
+            Made with ❤️ by <a href="https://github.com/lethifold222" style="color: #667eea;">lethifold222</a>
+        </p>
+    </div>
+</body>
+</html>
