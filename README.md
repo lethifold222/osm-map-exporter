@@ -62,6 +62,8 @@ python3 main.py
 
 The backend will be available at `http://localhost:8000`
 
+**Note**: If you encounter "ModuleNotFoundError", the updated startup script will automatically install dependencies.
+
 ### Frontend Setup
 
 1. Navigate to the frontend directory:
@@ -79,7 +81,9 @@ npm install
 npm run dev
 ```
 
-The frontend will be available at `http://localhost:3000`
+The frontend will be available at `http://localhost:3000` (or 3001, 3002, etc. if 3000 is busy)
+
+**Note**: The frontend will automatically try different ports if 3000 is occupied.
 
 ## Usage
 
@@ -198,6 +202,22 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Overpass API](https://overpass-api.de/) for data extraction
 - [Leaflet](https://leafletjs.com/) for interactive maps
 - [React](https://reactjs.org/) for the user interface
+
+## Troubleshooting
+
+If you encounter issues, check the [Troubleshooting Guide](TROUBLESHOOTING.md) for common solutions.
+
+### Quick Fix
+```bash
+# Stop all processes and restart
+pkill -f "python3 main.py" && pkill -f "npm run dev"
+./start.sh
+```
+
+### Common Issues
+- **"Data loading error"**: Make sure both servers are running
+- **"ModuleNotFoundError"**: Dependencies will be auto-installed by the startup script
+- **Port conflicts**: Frontend will automatically try different ports (3001, 3002, etc.)
 
 ## Support
 
