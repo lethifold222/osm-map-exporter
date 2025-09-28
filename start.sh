@@ -31,14 +31,23 @@ start_backend() {
     # Activate virtual environment
     source venv/bin/activate
     
-    # Install dependencies if needed
-    if [ ! -f "venv/pyvenv.cfg" ] || [ ! -d "venv/lib" ]; then
-        echo "📦 Installing Python dependencies..."
-        pip install -r requirements.txt
+    # Always install/update dependencies
+    echo "📦 Installing Python dependencies..."
+    pip install -r requirements.txt
+    
+    # Check if FastAPI is installed
+    if ! python3 -c "import fastapi" 2>/dev/null; then
+        echo "❌ FastAPI installation failed. Trying to reinstall..."
+        pip install --upgrade pip
+        pip install -r requirements.txt --force-reinstall
+    else
+        echo "✅ FastAPI installed successfully"
     fi
     
     # Start backend server
     echo "🌐 Backend server starting on http://localhost:8000"
+    echo "DEBUG: Python path: $(which python3)"
+    echo "DEBUG: Pip path: $(which pip)"
     python3 main.py &
     BACKEND_PID=$!
     
@@ -50,11 +59,9 @@ start_frontend() {
     echo "🎨 Starting frontend server..."
     cd frontend
     
-    # Install dependencies if needed
-    if [ ! -d "node_modules" ]; then
-        echo "📦 Installing Node.js dependencies..."
-        npm install
-    fi
+    # Always install/update dependencies
+    echo "📦 Installing Node.js dependencies..."
+    npm install
     
     # Start frontend server
     echo "🌐 Frontend server starting on http://localhost:3000"
