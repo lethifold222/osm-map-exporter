@@ -1,0 +1,73 @@
+{
+  "Retail/Trade": [
+    "shop=*",
+    "amenity=marketplace",
+    "amenity=mall"
+  ],
+  "Government": [
+    "amenity=townhall",
+    "amenity=courthouse",
+    "amenity=embassy",
+    "office=government",
+    "government=*"
+  ],
+  "Education": [
+    "amenity=school",
+    "amenity=college",
+    "amenity=university",
+    "amenity=kindergarten",
+    "amenity=library"
+  ],
+  "Health": [
+    "amenity=hospital",
+    "amenity=clinic",
+    "amenity=doctors",
+    "amenity=dentist",
+    "amenity=pharmacy",
+    "healthcare=*"
+  ],
+  "Transport": [
+    "amenity=bus_station",
+    "amenity=ferry_terminal",
+    "amenity=bicycle_parking",
+    "public_transport=*",
+    "railway=*",
+    "aeroway=terminal"
+  ],
+  "Culture/Leisure": [
+    "amenity=theatre",
+    "amenity=cinema",
+    "amenity=arts_centre",
+    "tourism=museum",
+    "tourism=attraction",
+    "leisure=*"
+  ],
+  "Hospitality": [
+    "tourism=hotel",
+    "tourism=guest_house",
+    "tourism=motel",
+    "tourism=hostel",
+    "amenity=restaurant",
+    "amenity=cafe",
+    "amenity=fast_food",
+    "amenity=bar",
+    "amenity=pub"
+  ],
+  "Finance": [
+    "amenity=bank",
+    "amenity=atm",
+    "amenity=bureau_de_change"
+  ],
+  "Services": [
+    "amenity=post_office",
+    "amenity=police",
+    "amenity=fire_station",
+    "amenity=car_rental",
+    "amenity=car_wash",
+    "office=*"
+  ],
+  "Religious": [
+    "amenity=place_of_worship",
+    "religion=*"
+  ]
+}
