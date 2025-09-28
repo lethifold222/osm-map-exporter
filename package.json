@@ -1,0 +1,42 @@
+{
+  "name": "osm-map-exporter",
+  "version": "1.0.0",
+  "description": "A web application for extracting and exporting OpenStreetMap data with interactive mapping capabilities",
+  "main": "index.js",
+  "scripts": {
+    "start": "./start.sh",
+    "dev": "./start.sh",
+    "backend": "cd backend && python3 main.py",
+    "frontend": "cd frontend && npm run dev",
+    "install-backend": "cd backend && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt",
+    "install-frontend": "cd frontend && npm install",
+    "install": "npm run install-backend && npm run install-frontend",
+    "build": "cd frontend && npm run build",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lethifold222/osm-map-exporter.git"
+  },
+  "keywords": [
+    "openstreetmap",
+    "osm",
+    "map",
+    "export",
+    "geospatial",
+    "gis",
+    "react",
+    "fastapi",
+    "typescript"
+  ],
+  "author": "lethifold222",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lethifold222/osm-map-exporter/issues"
+  },
+  "homepage": "https://github.com/lethifold222/osm-map-exporter#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.12.0"
+  }
+}
