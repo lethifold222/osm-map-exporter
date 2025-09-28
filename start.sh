@@ -33,13 +33,15 @@ start_backend() {
     
     # Always install/update dependencies
     echo "📦 Installing Python dependencies..."
-    pip install -r requirements.txt
+    pip install --upgrade pip
+    pip install -r requirements.txt --force-reinstall
     
     # Check if FastAPI is installed
     if ! python3 -c "import fastapi" 2>/dev/null; then
-        echo "❌ FastAPI installation failed. Trying to reinstall..."
-        pip install --upgrade pip
-        pip install -r requirements.txt --force-reinstall
+        echo "❌ FastAPI installation failed. Trying alternative approach..."
+        pip uninstall -y numpy shapely geopandas
+        pip install numpy==1.26.4 shapely==1.8.5 geopandas==0.14.1
+        pip install -r requirements.txt
     else
         echo "✅ FastAPI installed successfully"
     fi
